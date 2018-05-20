@@ -4,7 +4,9 @@
     <img :src="characters[$route.params.id].image_url">
     <h1>{{ characters[$route.params.id].name}} ☆{{ characters[$route.params.id].favorite }}いいね☆</h1>
     <p>{{ characters[$route.params.id].msg }}</p>
-    <button v-on:click="increment($route.params.id)">いいね！</button>
+    <button v-on:click="increment($route.params.id, 1)">いいね！</button>
+    <button v-on:click="increment($route.params.id, 10)">めちゃいいね！</button>
+    <button v-on:click="increment($route.params.id, 500000000)">いいぜ！</button>
   </div>
 </template>
 
@@ -32,8 +34,8 @@ export default {
     }
   },
   methods: {
-    increment (id) {
-      this.characters[id].favorite++
+    increment (id, num) {
+      this.characters[id].favorite += num
     },
     reset (id) {
       this.characters[id].favorite = 0

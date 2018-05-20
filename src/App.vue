@@ -2,9 +2,6 @@
   <div id="app">
     <img src="http://www.tv-tokyo.co.jp/anime/prichan/images/logo.png">
     <router-view/>
-    <button type="button" class="btn btn-default" @click="login">
-    匿名ユーザーでログイン[WIP]
-    </button>
   </div>
 </template>
 
